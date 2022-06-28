@@ -1,12 +1,12 @@
-//META{"name":"BetterAPI"}*//
-function BetterAPI() {}
+//META{"name":"GoodAPI"}*//
+function GoodAPI() {}
 
-BetterAPI.prototype.load = function() {
+GoodAPI.prototype.load = function() {
 	
 	var debug = 1;
 	
 	//appendTo
-	BetterAPI.appendTo = function(link, Element){
+	GoodAPI.appendTo = function(link, Element){
 		var $head = $("head");
 		var $headlinklast = $head.find( link + ":last");
 		if ($headlinklast.length){
@@ -23,25 +23,25 @@ BetterAPI.prototype.load = function() {
 	// $("head").append('<script src="https://cdn.rawgit.com/qeled/discordie/master/lib/index.js"></script>');
 	
 	//isNumber
-	BetterAPI.isNumber = function(string) {
+	GoodAPI.isNumber = function(string) {
 		return /^\d+$/.test(string);
 	};
 	//log
-	BetterAPI.log = function(dbg, type, pluginName, msg, vars) {
+	GoodAPI.log = function(dbg, type, pluginName, msg, vars) {
 		if ( (dbg = "debug") || (dbg = 1) ) {
 			if (debug == 1) {
 				switch(type) {
 					case "info":
-						console.info("[BetterDiscord] " + pluginName + ": " + msg, vars);
+						console.info("[Goodcord] " + pluginName + ": " + msg, vars);
 						break;
 					case "warn":
-						console.warn("[BetterDiscord] " + pluginName + ": " + msg, vars);
+						console.warn("[Goodcord] " + pluginName + ": " + msg, vars);
 						break;
 					case "error":
-						console.error("[BetterDiscord] " + pluginName + ": " + msg, vars);
+						console.error("[Goodcord] " + pluginName + ": " + msg, vars);
 						break;
 					default:
-						console.log("[BetterDiscord] " + pluginName + ": " + msg, vars);
+						console.log("[Goodcord] " + pluginName + ": " + msg, vars);
 				};
 			} else {
 				return;
@@ -49,21 +49,21 @@ BetterAPI.prototype.load = function() {
 		} else {
 			switch(type) {
 				case "info":
-					console.info("[BetterDiscord] " + pluginName + ": " + msg, vars);
+					console.info("[Goodcord] " + pluginName + ": " + msg, vars);
 					break;
 				case "warn":
-					console.warn("[BetterDiscord] " + pluginName + ": " + msg, vars);
+					console.warn("[Goodcord] " + pluginName + ": " + msg, vars);
 					break;
 				case "error":
-					console.error("[BetterDiscord] " + pluginName + ": " + msg, vars);
+					console.error("[Goodcord] " + pluginName + ": " + msg, vars);
 					break;
 				default:
-					console.log("[BetterDiscord] " + pluginName + ": " + msg, vars);
+					console.log("[Goodcord] " + pluginName + ": " + msg, vars);
 			};
 		};	
 	};
 	//getUserIdByName
-	BetterAPI.getUserIdByName = function(name) {
+	GoodAPI.getUserIdByName = function(name) {
 		var nick = "";
 		var match = "";		
 		var users = $(".member-username");
@@ -90,14 +90,14 @@ BetterAPI.prototype.load = function() {
 			});
 		};
 		if ( ( match != "" ) && ( /^\d+$/.test(match) ) && ( ( match.length < 17 ) || ( match.length > 18 ) ) ) {
-			console.log("BetterDiscord: "+ BetterAPI.prototype.getName() +": UID of \""+nick+"\" is "+match);
+			console.log("Goodcord: "+ GoodAPI.prototype.getName() +": UID of \""+nick+"\" is "+match);
 			return match;
 		} else {
 			return null;
 		};
 	};
 	//getUserNameById
-	BetterAPI.getUserNameById = function(id) {
+	GoodAPI.getUserNameById = function(id) {
 		var match = "";
 		var users = $(".avatar-small");
 		for(var i = 0 ; i < users.length ; i++) {
@@ -127,37 +127,37 @@ BetterAPI.prototype.load = function() {
 	$("head").append('<script src="https://raw.githubusercontent.com/VersatilityWerks/jAlert/master/src/jAlert-v3.min.js"></script>');
 	$("head").append('<script src="https://raw.githubusercontent.com/VersatilityWerks/jAlert/master/src/jAlert-functions.min.js"></script>');
 
-	console.log("BetterDiscord: " + this.getName() + " v" + this.getVersion() + " by " + this.getAuthor() + " loaded.");
+	console.log("Goodcord: " + this.getName() + " v" + this.getVersion() + " by " + this.getAuthor() + " loaded.");
 };
 
-BetterAPI.prototype.unload = function() {
-	console.log("BetterDiscord: " + this.getName() + " v" + this.getVersion() + " by " + this.getAuthor() + " unloaded.");
+GoodAPI.prototype.unload = function() {
+	console.log("Goodcord: " + this.getName() + " v" + this.getVersion() + " by " + this.getAuthor() + " unloaded.");
 };
 
-BetterAPI.prototype.start = function() {		
-	console.log("BetterDiscord: " + this.getName() + " v" + this.getVersion() + " by " + this.getAuthor() + " started.");
+GoodAPI.prototype.start = function() {		
+	console.log("Goodcord: " + this.getName() + " v" + this.getVersion() + " by " + this.getAuthor() + " started.");
 };
 
-BetterAPI.prototype.stop = function() {
-	console.log("BetterDiscord: " + this.getName() + " v" + this.getVersion() + " by " + this.getAuthor() + " stopped.");
+GoodAPI.prototype.stop = function() {
+	console.log("Goodcord: " + this.getName() + " v" + this.getVersion() + " by " + this.getAuthor() + " stopped.");
 };
 
-BetterAPI.prototype.update = function() {
-	console.log("BetterDiscord: " + this.getName() + " v" + this.getVersion() + " by " + this.getAuthor() + " updated.");
+GoodAPI.prototype.update = function() {
+	console.log("Goodcord: " + this.getName() + " v" + this.getVersion() + " by " + this.getAuthor() + " updated.");
 };
 
-BetterAPI.prototype.getName = function() {
-	return "BetterAPI Plugin";
+GoodAPI.prototype.getName = function() {
+	return "GoodAPI Plugin";
 };
 
-BetterAPI.prototype.getDescription = function() {
-	return "Enhances the BetterDiscord Plugin API.";
+GoodAPI.prototype.getDescription = function() {
+	return "Enhances the Goodcord Plugin API.";
 };
 
-BetterAPI.prototype.getVersion = function() {
+Goodcord.prototype.getVersion = function() {
 	return "1.0";
 };
 
-BetterAPI.prototype.getAuthor = function() {
+Goodcord.prototype.getAuthor = function() {
 	return "deadlyremote";
 };
